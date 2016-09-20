@@ -9,8 +9,14 @@
 int main()
 {
 	//Aktivierung der "öüä" Zeichen bei der Ausgabe
-	std::locale::global(std::locale("German"));																			//Aktivierung der "öüä" Zeichen bei der Ausgabe
+	std::locale::global(std::locale("German"));	
 	std::string name;
+
+	//int's
+	float x1 = 0;
+	float K1 = 0;
+	float p1 = 0;
+	float math_antwort1 = 0;
 
 
 	//Namen fragen
@@ -32,8 +38,64 @@ int main()
 
 
 	//1. Frage
-	//Ich weiss nicht wie ich y/n fragen machen kann, um dann mit der Antwort weiter zu machen...
+	char antwort1 = ' ';
+	char antwort2 = ' ';
+	char antwort3 = ' ';
 
+	std::cout << "Regelmässige Einzahlungen? [y/n]" << std::endl;
+	std::cin >> antwort1;
+
+	
+	//Antworten zur ersten Frage
+
+	//Positiv
+	if (antwort1 == 'y')
+	{
+		std::cout << "Du hast mit 'y' geantwortet. Willst du wissen, wieviel Geld du nach *einem* Jahr hast?" << std::endl
+			<< "[y/n]" << std::endl;
+		std::cin >> antwort2;
+	}
+
+	//Negativ
+	else if (antwort1 == 'n')
+	{
+		std::cout << "Du hast mit 'n' geantwortet. Von wievielen Jahren willst du den Zins wissen?" << std::endl
+			<< "[one/two/three] (Funktion noch nicht verfügbar)." << std::endl;
+		std::cin >> antwort3;
+	}
+
+	//Neutral
+	else
+	{
+		std::cout << "Antworte bitte mit y für Ja oder n für Nein." 
+			<< "Um fortzufahren starte das Programm neu." << std::endl;
+	}
+		
+
+	//Antworten zur zweiten Frage (A)
+
+	//Positiv
+	if (antwort2 == 'y')
+	{
+		//Eingabe x1
+		std::cout << "Du hast mit 'y' geantwortet." << std::endl
+			<< "Bitte gib an, wieviele Einzahlungen du im Jahr hast." << std::endl;
+		std::cin >> x1;
+		//Eingabe K1
+		std::cout << "Bitte gib an, wieviel Geld du pro Einzahlung einzahlst." << std::endl;
+		std::cin >> K1;
+		//Eingabe z1
+		std::cout << "Bitte gib an, wieviel Zins du erhälst." << std::endl;
+		std::cin >> p1;
+		//Berechnung
+		math_antwort1 = ((x1 * x1 + x1) / 2 * (1 / x1) * (K1 * p1 / 100)) + (K1 * x1);
+		//Antwort
+		std::cout << "Am Ende des Jahres hast du " << math_antwort1 << "CHF." << std::endl << std::endl << std::endl << std::endl
+			<< "Vielen Dank fürs Testen meines ersten grösseren Programmes" << std::endl
+			<< "Bug report: https://github.com/godlikecs12/projekt_zins/issues/new" << std::endl;
+
+
+	}
 
 
 
