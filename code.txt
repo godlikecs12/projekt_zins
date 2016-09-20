@@ -1,0 +1,41 @@
+//projekt_zins by http://github.com/godlikecs12
+
+
+#include <iostream>
+#include <locale>
+#include <string>
+
+
+int main()
+{
+	//Aktivierung der "öüä" Zeichen bei der Ausgabe
+	std::locale::global(std::locale("German"));																			//Aktivierung der "öüä" Zeichen bei der Ausgabe
+	std::string name;
+
+
+	//Namen fragen
+	std::cout << "Gib bitte deinen Vornamen ein:" << std::endl;
+	std::cin >> name;
+	
+
+	//Willkommens Nachricht
+	std::cout << "Hallo " << name << std::endl
+		<< "Willkomen beim 'projekt_zins'" << std::endl 
+		<< "Download: http://github.com/godlikecs12/" << std::endl << std::endl;
+
+
+	//Erklärung
+	std::cout << "Dies ist ein Programm, welches dazu gebraucht werden kann, verschiedene "
+		<< "Aufgaben rund um das Thema 'Zins' zu lösen. Zu erst musst du aber zwei Fragen beantworten:" 
+		<< std::endl 
+		<< std::endl;
+
+
+	//1. Frage
+	//Ich weiss nicht wie ich y/n fragen machen kann, um dann mit der Antwort weiter zu machen...
+
+
+
+
+	system("PAUSE");
+}
